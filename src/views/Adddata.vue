@@ -34,7 +34,8 @@
                     pdesc: '',
                     pprice: '',
                     pimg:'',
-                }
+                },
+                uid:20948,
             }
         },
         methods:{
@@ -42,9 +43,10 @@
                 let _this=this.formLabelAlign
                 axios({
                     url:'http://jx.xuzhixiang.top/ap/api/goods/goods-add.php',
-                    params:{uid:20620,pname:_this.pname,pimg:_this.pimg,pdesc:_this.pdesc,pprice:_this.pprice}
+                    params:{uid:this.uid,pname:_this.pname,pimg:_this.pimg,pdesc:_this.pdesc,pprice:_this.pprice}
                 }).then((data)=>{
-                    //alert('添加数据成功')
+                    alert('添加数据成功')
+                    this.formLabelAlign={}
                     console.log(data)
                 })
 

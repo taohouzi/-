@@ -67,6 +67,13 @@
     import axios from 'axios';
     export default {
         name: "Home",
+        data() {
+            return {
+                show:'true',
+                tableData:[],
+                uid:20941
+            }
+        },
         methods: {
             handleEdit(id) {
                 console.log(id)
@@ -75,12 +82,12 @@
             handleDelete(key, keyPath) {
                 axios({
                     url:'http://jx.xuzhixiang.top/ap/api/goods/goods-delete.php',
-                    params:{uid:20620,pid:keyPath.pid}
+                    params:{uid:this.uid,pid:keyPath.pid}
                 }).then((data)=>{
                     alert('删除数据成功')
                     axios({
                         url:'http://jx.xuzhixiang.top/ap/api/productlist.php',
-                        params:{uid:20620}
+                        params:{uid:this.uid}
                     }).then((data)=>{
                         this.tableData=data.data.data
                         console.log(data)
@@ -91,18 +98,14 @@
                 return index * 1;
             }
         },
-        data() {
-            return {
-                show:'true',
-                tableData:[]
-            }
-        },
+
         mounted() {
             axios({
                 url:'http://jx.xuzhixiang.top/ap/api/productlist.php',
-                params:{uid:20620}
+                params:{uid:this.uid}
             }).then((data)=>{
                 this.tableData=data.data.data
+                console.log(data)
             })
         }
 

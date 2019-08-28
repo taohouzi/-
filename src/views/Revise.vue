@@ -43,6 +43,7 @@
                 axios({
                     url:' http://jx.xuzhixiang.top/ap/api/goods/goods-update.php',
                     params:{
+                        uid:'',
                         pid:this.$route.params.id,
                         pname:_this.pname,
                         pdesc:_this.pdesc,
