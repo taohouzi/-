@@ -62,5 +62,13 @@
     "not ie <= 8"
   ],
   "main": ".postcssrc.js",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taohouzi/-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/taohouzi/-/issues"
+  },
+  "homepage": "https://github.com/taohouzi/-#readme"
 }
